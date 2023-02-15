@@ -1,4 +1,22 @@
-//add everything here
+plugins {
+    // id for library
+    id 'java-library'
+    // id for maven to publish jar to local repository
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+repositories {
+    mavenLocal()
+}
+
+dependencies {
+    implementation project(':utils')
+}
 
 test {
     useJUnitPlatform()
